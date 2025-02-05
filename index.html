@@ -116,18 +116,42 @@
             if (questionAnswered) return; // Prevent selecting after answering
 
             document.querySelectorAll('.option').forEach(btn => {
-                btn.style.backgroundColor = '';
-                btn.classList.remove('selected');
+                btn.style.backgroundColor = '';  // Reset background color
+                btn.classList.remove('selected');  // Remove selection
             });
 
-            button.style.backgroundColor = '#e0e0e0';
-            button.classList.add('selected');
+            button.style.backgroundColor = '#e0e0e0'; // Highlight selected option
+            button.classList.add('selected'); // Add class for styling
             selectedOption = button;
 
-            // Automatically confirm after a selection
+            questionAnswered = true; // Mark question as answered
+
+            // Immediately check the answer after the selection
             setTimeout(() => {
                 checkAnswer();
-            }, 500);
+            }, 0);  // Add slight delay for smoother UX, if needed
+        }
+
+        function checkAnswer() {
+            // Evaluate the selected option
+            if (selectedOption.textContent === correctAnswer) {
+                selectedOption.classList.add('correct');
+                selectedOption.innerHTML += ' ✅';
+            } else {
+                selectedOption.classList.add('incorrect');
+                selectedOption.innerHTML += ' ❌';
+                selectedOption.disabled = true; // Disable the selected option if incorrect
+            }
+
+            // Allow retry after a wrong answer by enabling other options again
+            setTimeout(() => {
+                // Re-enable the options after a short delay for retry
+                questionAnswered = false;
+                document.querySelectorAll('.option').forEach(btn => {
+                    btn.disabled = false;  // Re-enable all buttons
+                    btn.style.backgroundColor = '';  // Reset background color
+                });
+            }, 500); // Allow retry after 1 second (adjust as needed)
         }
 
         function checkAnswer() {
