@@ -8,7 +8,7 @@ AI,Armonia
 AI-YOTSU,Presa al judogi dalla stessa parte
 ANTEI,Equilibrio
 ARASHI,Tempesta
-ASHI,Piede e gamba
+ASHI,Piede / gamba
 ASHI-ATE,Colpire con arti inferiori
 ASHI-GARAMI,Avvolgere la gamba
 ASHI-GURUMA,Ruota sulla gamba
@@ -80,6 +80,7 @@ GYAKU-TSUKI,Pugno con passo in avanti con braccio e gamba contrari
 GYAKU-UDE-GARAMI,Ude-garami con il braccio rivolto verso il basso
 GYAKU-YOKO-UKEMI,Forma di Yoko-ukemi con il tai-sabaki
 HA,Ala
+HACHI,Otto
 HADAKA,Nude
 HADAKA-JIME,Strangolare a mani nude
 HAI,Sì
@@ -111,8 +112,10 @@ HIZA-GURUMA,Ruota al ginocchio
 HIZA-SEOI-NAGE,Seoi-nage con la mano che blocca il ginocchio
 HON,Fondamentale
 HON-KESA,Stola che cade dalla spalla sx lasciando scoperto il petto
+ICHI,Uno
 IDORI,Tecniche in ginocchio
-IPPON,Uno
+IIE,No
+IPPON,Punto pieno
 IPPON-SEOI-NAGE,Lancio sul dorso con braccio sotto all'ascella
 ITSUTSU-NO-KATA,Forma dei cinque
 IWA-NAMI,Rottura contro la roccia
@@ -125,6 +128,8 @@ JODAN-NI-KAMAERU,Parata alta con la spada
 JODAN-SOTO-UKE,Parata esterna all'altezza del viso
 JODAN-UCHI-UKE,Parata interna all'altezza del viso
 JOSEKI,Lato degli insegnanti e lato d'onore nell'esecuzione dei kata
+JU / JIU,Flessibile
+JUU,Dieci
 JUDO,Via della cedevolezza
 JUDOGI / KEIKOGI,Abito dei praticanti di judo
 JUDOKA,Praticante di judo
@@ -203,6 +208,7 @@ KO-TSURI-GOSHI,Piccolo colpo d'anca tirando
 KOUCHI-GAESHI,Contraccolpo su piccola falciata
 KOUCHI-GARI,Piccola falciata interna
 KOUCHI-MAKIKOMI,Piccola arrotolata interna
+KU,Nove
 KUATSU,Tecniche di rianimazione
 KUBI,Collo
 KUBI-NAGE,Proiezione con presa al collo
@@ -242,6 +248,7 @@ MIGI-JIGOTAI,Posizione difensiva dx
 MIGI-SHIZENTAI,Posizione naturale dx
 MIKAZUKI-GERI,Calcio a spazzare con traiettoria circolare ascendente
 MI-KUDAKI,Distruzione del corpo
+MIZU,Acqua
 MIZU-GURUMA,La ruota del mulino
 MIZU-IRI,Immerso nella corrente
 MIZU-NAGARE,Corrente d'acqua
@@ -263,6 +270,7 @@ NANAME,Obliquo
 NANAME-UCHI,Pugno obliquo alla tempia
 NANAME-ZUKI,Pugnalata obliqua al collo
 NE-WAZA,Tecniche al suolo
+NI,Due
 NO,Per
 NOGARE-KATA,Forma di rovesciamento
 NUKI-KAKE,Colpire sfoderando
@@ -284,6 +292,7 @@ OSOTO-GARI,Grande falciata esterna
 OSOTO-GURUMA,Grande rotazione esterna indietro
 OSOTO-MAKIKOMI,Falciare all'esterno arrotolando
 OSOTO-OTOSHI,Grande falciata esterna indietro
+OSU / OSS, Espressione usata per salutare
 OTOSHI,Mettere giù
 O-TSURI-GOSHI,Grande colpo d'anca tirando
 OUCHI-GAESHI,Contraccolpo su grande falciata interna
@@ -297,6 +306,7 @@ RENRAKU-WAZA,Combinazione di tecniche - dopo lo speciale
 REN-TSUKI,Colpo doppiato
 RENZOKU-WAZA,Combinazione di tecniche - prima dello speciale
 RITSUREI,Saluto eseguito in piedi
+ROKU,Sei (numero)
 RYOGAN-TSUKI,Pungere agli occhi
 RYOKATA-OSHI,Appoggiarsi sulle spalle
 RYOKUHI,Appropriato uso della forza
@@ -304,6 +314,7 @@ RYOTE-DORI,Presa ai polsi
 RYUSETSU,La neve sul selciato
 SABAKI,Schivare
 SAKAOTOSHI,Caduta a precipizio
+SAN,Tre
 SANKAKU,Triangolo
 SANKAKU-GATAME,Controllo con le gambe a triangolo
 SANKAKU-JIME,Strangolare con le gambe a triangolo
@@ -318,7 +329,9 @@ SENSEI,Maestro
 SEOI,Parte superiore del dorso
 SEOI-NAGE,Proiezione con il dorso
 SEOI-OTOSHI,Proiezione con una o due ginocchia al suolo
+SHI,Quattro
 SHIAI,Combattimento reale
+SHICHI,Sette
 SHI-HAN,Modello
 SHIHO,Controllo col torace - quattro punti
 SHIKKO,Spostarsi sulle ginocchia
@@ -367,6 +380,7 @@ TATE,In verticale
 TATE-SHIHO-GATAME,Controllo su quattro punti in verticale
 TAWARA,Sacco di paglia
 TAWARA-GAESHI,Lanciare indietro prendendo le spalle
+TE,Mano
 TEGATANA,Braccio teso per colpire con il taglio della mano
 TE-GURUMA,Ruota di braccio
 TEISO-UCHI,Colpo con la parte bassa della mano al volto
@@ -450,6 +464,7 @@ YAMA-ARASHI,Tempesta sulla montagna
 YAWARA,Assecondare
 YAWARA-NO-BOGYO,Difesa in piedi assecondando
 YO,Miglior impiego dell'energia
+YOI, Pronti! / Prepararsi!
 YOKO,Laterale
 YOKO-EMPI,Colpire col gomito lateralmente
 YOKO-GAKE,Agganciamento laterale
