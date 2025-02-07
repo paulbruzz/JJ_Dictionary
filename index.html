@@ -41,12 +41,23 @@
             font-size: 1.2em;
             cursor: pointer;
             border: 2px solid #343a40;
-            background-color: #ffffff;
             border-radius: 5px;
+            background-color: white; /* Ensure full opacity */
+            color: black;
+            transition: background-color 0.2s ease-in-out;
         }
-        .correct { background-color: #28a745; color: white; }
-        .incorrect { background-color: #dc3545; color: white; }
-        .disabled { background-color: #d6d6d6; cursor: not-allowed; }
+        .correct {
+            background-color: #77dd77 !important; /* Green */
+            color: black !important;
+        }
+        .incorrect {
+            background-color: #Ff6961 !important; /* Red */
+            color: black !important;
+        }
+        .disabled {
+            background-color: #d6d6d6;
+            cursor: not-allowed;
+        }
     </style>
 </head>
 <body>
@@ -67,7 +78,6 @@
                 startQuiz();
             })
             .catch(error => console.error('Error loading dictionary:', error));
-
 
         function parseCSV(csv) {
             const lines = csv.trim().split('\n').slice(1); // Remove header
@@ -106,7 +116,7 @@
             shuffledOptions.forEach(option => {
                 const button = document.createElement('button');
                 button.textContent = option;
-                button.classList.add('btn', 'btn-light', 'option');
+                button.classList.add('option');
                 button.onclick = () => selectOption(button);
                 optionsContainer.appendChild(button);
             });
@@ -115,71 +125,33 @@
         function selectOption(button) {
             if (questionAnswered) return; // Prevent selecting after answering
 
-            document.querySelectorAll('.option').forEach(btn => {
-                btn.style.backgroundColor = '';  // Reset background color
-                btn.classList.remove('selected');  // Remove selection
-            });
-
-            button.style.backgroundColor = '#e0e0e0'; // Highlight selected option
-            button.classList.add('selected'); // Add class for styling
             selectedOption = button;
-
             questionAnswered = true; // Mark question as answered
 
-            // Immediately check the answer after the selection
-            setTimeout(() => {
-                checkAnswer();
-            }, 0);  // Add slight delay for smoother UX, if needed
-        }
-
-        function checkAnswer() {
-            // Evaluate the selected option
-            if (selectedOption.textContent === correctAnswer) {
-                selectedOption.classList.add('correct');
-                selectedOption.innerHTML += ' ✅';
-            } else {
-                selectedOption.classList.add('incorrect');
-                selectedOption.innerHTML += ' ❌';
-                selectedOption.disabled = true; // Disable the selected option if incorrect
-            }
-
-            // Allow retry after a wrong answer by enabling other options again
-            setTimeout(() => {
-                // Re-enable the options after a short delay for retry
-                questionAnswered = false;
-                document.querySelectorAll('.option').forEach(btn => {
-                    btn.disabled = false;  // Re-enable all buttons
-                    btn.style.backgroundColor = '';  // Reset background color
-                });
-            }, 500); // Allow retry after 0.5 seconds (adjust as needed)
+            checkAnswer();
         }
 
         function checkAnswer() {
             if (!selectedOption) return;
 
-            questionAnswered = true; // Mark the question as answered
-
             if (selectedOption.textContent === correctAnswer) {
                 selectedOption.classList.add('correct');
-                selectedOption.innerHTML += ' ✅';
+                selectedOption.innerHTML += ' ✓';
                 setTimeout(() => {
                     resetState();
                     startQuiz();
-                }, 1000); // Proceed to the next question after a short delay
+                }, 1000); // Move to the next question
             } else {
                 selectedOption.classList.add('incorrect');
-                selectedOption.innerHTML += ' ❌';
+                selectedOption.innerHTML += ' ✗';
                 
-                // Disable only the selected wrong option
-                selectedOption.disabled = true;
+                selectedOption.disabled = true; // Disable incorrect option
 
-                // Provide an option to retry by reloading the question
                 setTimeout(() => {
-                    questionAnswered = false; // Allow retrying
-                    selectedOption.classList.remove('incorrect');
-                    selectedOption.innerHTML = selectedOption.textContent; // Remove the ❌ symbol
+                    questionAnswered = false;
+                    //selectedOption.classList.remove('incorrect');
+                    selectedOption.innerHTML = selectedOption.textContent;
 
-                    // Gray out the incorrect option
                     document.querySelectorAll('.option').forEach(option => {
                         if (option !== selectedOption) {
                             option.disabled = false;
@@ -187,18 +159,15 @@
                             option.classList.add('disabled');
                         }
                     });
-                }, 500); // Retry after 0.5 seconds delay
+                }, 0); // Retry after 0.5s
             }
         }
 
-        // Function to reset the state for the next question
         function resetState() {
             selectedOption = null;
             document.querySelectorAll('.option').forEach(btn => {
                 btn.disabled = false;
-                btn.classList.remove('disabled');
-                btn.classList.remove('correct');
-                btn.classList.remove('incorrect');
+                btn.classList.remove('disabled', 'correct', 'incorrect');
                 btn.innerHTML = btn.textContent;
             });
         }
